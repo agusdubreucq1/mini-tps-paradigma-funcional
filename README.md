@@ -1,6 +1,6 @@
 # Mini TPs - Paradigma Funcional 2021
 
-Nombre y Apellido: ***...COMPLETAR...***
+Nombre y Apellido: Agustin Dubreucq
 
 **Reemplazá este texto por el Badge de GitHub Actions como se explica en el TP0**
 
