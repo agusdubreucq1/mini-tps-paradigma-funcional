@@ -7,12 +7,18 @@ hayCambioDeEstacion :: Int -> Bool
 hayCambioDeEstacion y = (mod y 3 == 0) && (esMes y)
 
 estacion :: Int -> String
-estacion x
-  | (x>0 && x<3) = "verano"
-  | (x>3 && x<6) = "otonio"
-  | (x>6 && x<9) = "invierno"
-  | (x>9 && x<12) = "primavera"
-estacion 3 ="verano/otonio"
-estacion 6 ="otonio/invierno"
-estacion 9 ="invierno/primavera"
-estacion 12 ="primavera/verano"
+estacion 1 ="verano"
+estacion 4 ="otonio"
+estacion 7 ="invierno"
+estacion 10 ="primavera"
+estacion mes
+  | (hayCambioDeEstacion mes) && (esMes mes) = estacion (mesAnterior mes) ++ "/" ++ estacion (mesSiguiente mes)
+  | esMes mes= estacion (mesAnterior mes)
+
+mesSiguiente:: Int -> Int
+mesSiguiente 12 = 1
+mesSiguiente mes = mes + 1
+
+mesAnterior:: Int -> Int
+mesAnterior 1 = 12
+mesAnterior mes = mes - 1
