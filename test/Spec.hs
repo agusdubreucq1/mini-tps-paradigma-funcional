@@ -3,6 +3,7 @@ import qualified SpecTP0
 import qualified SpecTP1
 import qualified SpecTP2
 import qualified SpecTP3
+import qualified SpecTP4
 
 main :: IO ()
 main = hspec $ do
@@ -10,3 +11,4 @@ main = hspec $ do
   describe "TP1"  SpecTP1.spec
   describe "TP2"  SpecTP2.spec
   describe "TP3"  SpecTP3.spec
+  describe "TP4"  SpecTP4.spec
