@@ -13,7 +13,7 @@ data Celular = Celular {
 ------------------------------------------
 
 promoRecarga :: Int -> Celular -> Celular
-promoRecarga monto celu = modificarSaldo celu (MontoACargar celu monto)
+promoRecarga monto celu = modificarSaldo celu (montoACargar monto celu)
 
 esMovistar::Celular->Bool
 esMovistar celu = (proveedor celu) == "movistar"
@@ -31,10 +31,10 @@ aumentarTriple::Int->Int
 aumentarTriple monto= monto*3
 
 aumentarConPlus::Int->Int
-aumentarConPlus monto = monto + (minimo monto 100)
+aumentarConPlus monto = monto + (min monto 100)
 
-MontoACargar::Int->Celular->Int
-MontoACargar monto celu
+montoACargar::Int->Celular->Int
+montoACargar monto celu
   | esMovistar celu && cod011 celu = aumentarTriple monto
   | esPersonal celu = aumentarConPlus monto
   | otherwise = monto
