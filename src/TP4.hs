@@ -15,7 +15,7 @@ recomendable :: Video -> Playlist -> Bool
 recomendable video = alMenos2 (estanRelacionados video) . videos
 
 alMenos2 :: (a -> Bool) -> [a] -> Bool
-alMenos2 criterio = (>=2) . length . filter (==True) . map criterio
+alMenos2 criterio = (>=2) . length . filter criterio 
 
 agregarVideosRecomendados :: [Video] -> Playlist -> Playlist
 agregarVideosRecomendados lista playlist = foldr (agregarAPlaylistSoloSi recomendable) playlist lista
